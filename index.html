@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tonton Sekarang</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: url('https://source.unsplash.com/1920x1080/?movie') center/cover no-repeat;
+      background-blend-mode: overlay;
+      background-color: rgba(0, 0, 0, 0.7);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 15px 40px;
+      font-size: 20px;
+      color: white;
+      background-color: #e50914;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #b20710;
+    }
+
+    #videoSection {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background-color: black;
+    }
+
+    video {
+      width: 90%;
+      max-width: 960px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Halaman Awal -->
+  <div class="container" id="landingPage">
+    <h1>Video Siap Diputar</h1>
+    <p>Klik tombol di bawah untuk mulai menonton.</p>
+    <button onclick="startWatching()">Mulai Menonton</button>
+  </div>
+
+  <!-- Pemutar Video -->
+  <div id="videoSection">
+    <h2>Menonton Sekarang</h2>
+    <video controls autoplay>
+      <source src="https://cdn.videy.co/XCGhoYTW1.mp4" type="video/mp4">
+      Browser Anda tidak mendukung video tag.
+    </video>
+  </div>
+
+  <script>
+    let clicked = false;
+
+    function startWatching() {
+      if (!clicked) {
+        clicked = true;
+
+        // Buka tab iklan
+        window.open("https://otieu.com/4/8039187");
+
+        // Setelah delay, tampilkan video
+        setTimeout(() => {
+          document.getElementById("landingPage").style.display = "none";
+          document.getElementById("videoSection").style.display = "block";
+        }, 1000);
+      } else {
+        // Kalau udah pernah klik, langsung ke video
+        document.getElementById("landingPage").style.display = "none";
+        document.getElementById("videoSection").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
